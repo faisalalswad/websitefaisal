@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# مجلد حفظ ملفات المقالات (نقوم بإنشائها لاحقًا)
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"            # المعرف الداخلي
+    label: "المقالات"        # الاسم الظاهر في الواجهة
+    folder: "content/posts" # مسار حفظ المقالات
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # تنسيق رابط المقال
+    fields:
+      - { label: "عنوان المقال", name: "title", widget: "string" }
+      - { label: "تاريخ النشر", name: "date", widget: "datetime" }
+      - { label: "وصف مختصر", name: "excerpt", widget: "text" }
+      - { label: "صورة الغلاف", name: "cover_image", widget: "image", required: false }
+      - { label: "نص المقال", name: "body", widget: "markdown" }
