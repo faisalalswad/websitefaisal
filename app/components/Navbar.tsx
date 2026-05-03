@@ -1,4 +1,3 @@
-// app/components/Navbar.tsx
 "use client";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
@@ -7,7 +6,20 @@ export default function Navbar() {
   const { t, language, toggleLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
 
-  const navItems = ["home", "about", "skills", "projects", "cv", "contact"];
+  const navItems = ["home", "about", "skills", "projects", "cv", "blog", "contact"];
+
+  const getHref = (item: string) => {
+    switch (item) {
+      case "blog":
+        return "/blog/index.html";   // ✅ تغيير الرابط إلى ملف HTML الثابت
+      case "projects":
+        return "/#portfolio";
+      case "cv":
+        return "/#cv-section";
+      default:
+        return `/#${item}`;
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -17,7 +29,7 @@ export default function Navbar() {
         </span>
         <div className="nav-links">
           {navItems.map((item) => (
-            <a key={item} href={`#${item === "projects" ? "portfolio" : item === "cv" ? "cv-section" : item}`}>
+            <a key={item} href={getHref(item)}>
               {t(`nav.${item}`)}
             </a>
           ))}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المدونة التقنية - Faisal Alwqidi</title>
+  <!-- استيراد نفس خط الموقع وأيقونات FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      direction: rtl;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .navbar {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, #0f6b7c, #1f9e8f);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 500;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #0f6b7c; }
+    .blog-header {
+      text-align: center;
+      padding: 3rem 0;
+    }
+    .blog-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+    .post-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #e5e7eb;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+    }
+    .post-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .post-card .date {
+      color: #6c757d;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+    .post-card p {
+      color: #4b5563;
+      line-height: 1.5;
+    }
+    .post-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 3rem;
+      color: #6c757d;
+    }
+    @media (max-width: 768px) {
+      .nav-links a { margin-left: 1rem; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <span class="logo"><i class="fas fa-wifi"></i> Faisal Alwqidi</span>
+      <div class="nav-links">
+        <a href="/">الرئيسية</a>
+        <a href="/#about">عني</a>
+        <a href="/#skills">المهارات</a>
+        <a href="/#portfolio">المشاريع</a>
+        <a href="/#cv-section">السيرة الذاتية</a>
+        <a href="/blog/index.html">المدونة</a>
+        <a href="/#contact">اتصل بي</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="blog-header">
+      <h1>📝 المدونة التقنية</h1>
+      <p>أحدث المقالات والشروحات في عالم الشبكات والتقنية</p>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card">
+        <a href="/blog/welcome.html">
+          <h2>مرحباً بكم في مدونتي</h2>
+          <div class="date">٣ مايو ٢٠٢٥</div>
+          <p>هذه أول مقالة في مدونتي التقنية. سأنشر فيها مقالات عن الشبكات، Linux، وأدوات المطورين.</p>
+        </a>
+      </div>
+      <div class="post-card">
+        <a href="/blog/welcom2.html">
+          <h2>موضوع ثاني تجريبي</h2>
+          <div class="date">٣ مايو ٢٠٢٥</div>
+          <p>محتوى تجريبي للمقالة الثانية يمكنك تعديله لاحقاً.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Faisal Al-Sawad — Network Engineer. Built with simplicity.</p>
+  </footer>
+</body>
+</html>
