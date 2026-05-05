@@ -394,3 +394,94 @@ footer {
     font-size: 1.6rem;
   }
 }
+
+
+/* ========== Hero Section with Profile Image ========== */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.25);
+}
+
+/* حلقة متدرجة حول الصورة */
+.hero-image-ring {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #2c98a8, #5bc0be, var(--accent));
+  background-size: 300% 300%;
+  animation: ringPulse 4s ease infinite;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+/* تأثير تموج خفيف */
+@keyframes ringPulse {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.5;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.5;
+  }
+}
+
+/* إضافة تدرج خلفية خفيف للقسم */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 10%, rgba(15, 107, 124, 0.08), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* تحسين للشاشات الصغيرة */
+@media (max-width: 640px) {
+  .hero-image-container {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .hero-image-wrapper {
+    margin-bottom: 1rem;
+  }
+}
